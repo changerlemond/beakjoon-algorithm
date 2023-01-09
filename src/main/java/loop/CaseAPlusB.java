@@ -1,0 +1,28 @@
+package loop;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class CaseAPlusB {
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        int a = Integer.parseInt(bufferedReader.readLine());
+
+        StringBuilder stringBuilder = new StringBuilder();
+        StringTokenizer stringTokenizer;
+
+        for (int i = 1; i <= a; i++) {
+            stringTokenizer = new StringTokenizer(bufferedReader.readLine()," ");
+            stringBuilder.append("Case #").append(i).append(": ")
+                    .append(Integer.parseInt(stringTokenizer.nextToken())
+                            + Integer.parseInt(stringTokenizer.nextToken())).append('\n');
+        }
+
+        bufferedReader.close();
+        System.out.println(stringBuilder);
+    }
+
+}
